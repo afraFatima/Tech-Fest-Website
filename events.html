@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore competitions, workshops and talks at TechFest 2026.">
+    <title>TechFest 2026 | Events</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+        <a href="index.html" class="logo">TechFest<span>2026</span></a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="events.html" aria-current="page">Events</a>
+            <a href="register.html">Register</a>
+        </div>
+
+        <div class="nav-actions">
+            <span class="saved-count">Saved: <span id="savedCount">0</span></span>
+            <button id="themeToggle" class="theme-btn" type="button"
+                aria-label="Toggle dark mode">Dark Mode</button>
+        </div>
+    </nav>
+</header>
+
+<main class="container section">
+
+    <div class="section-heading">
+        <p class="eyebrow">EXPLORE AND PARTICIPATE</p>
+        <h1>Our Events</h1>
+        <p>Find your favourite event and add it to your personal schedule.</p>
+    </div>
+
+    <section class="filter-section" aria-label="Event search and filters">
+
+        <div class="filter-group">
+            <label for="searchInput">Search Events</label>
+            <input type="search" id="searchInput"
+                placeholder="Search by event title...">
+        </div>
+
+        <div class="filter-group">
+            <label for="typeFilter">Event Category</label>
+            <select id="typeFilter">
+                <option value="all">All Categories</option>
+                <option value="competition">Competitions</option>
+                <option value="workshop">Workshops</option>
+                <option value="talk">Talks</option>
+            </select>
+        </div>
+
+        <fieldset class="day-filter">
+            <legend>Filter by Day</legend>
+
+            <label>
+                <input type="radio" name="dayFilter" value="all" checked>
+                All Days
+            </label>
+
+            <label>
+                <input type="radio" name="dayFilter" value="1">
+                Day 1
+            </label>
+
+            <label>
+                <input type="radio" name="dayFilter" value="2">
+                Day 2
+            </label>
+        </fieldset>
+
+    </section>
+
+    <p id="resultCount" class="result-count" aria-live="polite">
+        Loading events...
+    </p>
+
+    <section id="eventsContainer" class="events-grid"
+        aria-label="Available events">
+    </section>
+
+    <p id="noEvents" class="no-events" hidden>
+        No events found. Try changing your search or filters.
+    </p>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>© 2026 TechFest. All rights reserved.</p>
+        <p>Organized by University Computing Society.</p>
+    </div>
+</footer>
+
+</body>
+</html>
