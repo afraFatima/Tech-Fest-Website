@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Register for TechFest 2026 university events.">
+    <title>TechFest 2026 | Register</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+        <a href="index.html" class="logo">TechFest<span>2026</span></a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="events.html">Events</a>
+            <a href="register.html" aria-current="page">Register</a>
+        </div>
+
+        <div class="nav-actions">
+            <span class="saved-count">Saved: <span id="savedCount">0</span></span>
+            <button id="themeToggle" class="theme-btn" type="button"
+                aria-label="Toggle dark mode">Dark Mode</button>
+        </div>
+    </nav>
+</header>
+
+<main class="container section">
+
+    <div class="section-heading">
+        <p class="eyebrow">JOIN THE EXPERIENCE</p>
+        <h1>Event Registration</h1>
+        <p>Fill in your details to register for TechFest 2026.</p>
+    </div>
+
+    <form id="registrationForm" class="registration-form" novalidate>
+
+        <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName"
+                placeholder="Enter your full name" required>
+            <small class="error" id="nameError"></small>
+        </div>
+
+        <div class="form-group">
+            <label for="email">University Email</label>
+            <input type="email" id="email" name="email"
+                placeholder="example@university.edu.pk" required>
+            <small class="error" id="emailError"></small>
+        </div>
+
+        <div class="form-group">
+            <label for="regNumber">Registration Number</label>
+            <input type="text" id="regNumber" name="regNumber"
+                placeholder="F2026000000" required>
+            <small class="error" id="regNumberError"></small>
+        </div>
+
+        <div class="form-group">
+            <label for="eventSelect">Select Event</label>
+            <select id="eventSelect" name="event" required>
+                <option value="">Select an event</option>
+            </select>
+            <small class="error" id="eventError"></small>
+        </div>
+
+        <div class="form-group">
+            <label for="teamSize">Team Size</label>
+            <input type="number" id="teamSize" name="teamSize"
+                min="1" max="4" value="1" required>
+            <small class="error" id="teamSizeError"></small>
+        </div>
+
+        <fieldset class="form-group">
+            <legend>Participation Type</legend>
+
+            <div class="radio-options">
+                <label>
+                    <input type="radio" name="participation"
+                        value="individual" checked>
+                    Individual
+                </label>
+
+                <label>
+                    <input type="radio" name="participation"
+                        value="team">
+                    Team
+                </label>
+            </div>
+
+            <small class="error" id="participationError"></small>
+        </fieldset>
+
+        <div class="form-group">
+            <label for="tshirt">T-shirt Size</label>
+            <select id="tshirt" name="tshirt" required>
+                <option value="">Select size</option>
+                <option value="S">Small (S)</option>
+                <option value="M">Medium (M)</option>
+                <option value="L">Large (L)</option>
+                <option value="XL">Extra Large (XL)</option>
+            </select>
+            <small class="error" id="tshirtError"></small>
+        </div>
+
+        <div class="form-group terms-group">
+            <label>
+                <input type="checkbox" id="terms" name="terms">
+                I agree to the terms and conditions.
+            </label>
+            <small class="error" id="termsError"></small>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            Submit Registration
+        </button>
+
+    </form>
+
+    <section id="successMessage" class="success-card" hidden
+        aria-live="polite">
+        <h2>Registration Successful!</h2>
+        <p>Your registration details:</p>
+        <div id="registrationSummary"></div>
+        <button type="button" id="registerAgain" class="btn btn-primary">
+            Register Another Event
+        </button>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>© 2026 TechFest. All rights reserved.</p>
+        <p>Organized by University Computing Society.</p>
+    </div>
+</footer>
+
+</body>
+</html>
